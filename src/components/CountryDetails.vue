@@ -1,35 +1,34 @@
 <template>
-<div>
-  <img
-    class="flag"
-    :src="`https://flagpedia.net/data/flags/icon/72x54/${alpha2Code.toLowerCase()}.png`"
-    alt=""
-  />
-  <h1>{{ name }}</h1>
-  <table>
-    <thead>
-    </thead>
-    <tbody>
-      <tr class="d-flex flex-column">
-        <td class="fw-bold">Capital:</td>
-        <td>{{ capital }}</td>
-      </tr>
-      <tr class="d-flex flex-column">
-        <td class="fw-bold">Area:</td>
-        <td>{{ area }}</td>
-      </tr>
-      <tr class="d-flex flex-column">
-        <td class="fw-bold">Borders:</td>
-        <td>
-          <ul>
-            <li v-for="(border, index) in borders" :key="index">
-              <a :href="`/list/${border}`">{{ border }}</a>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div>
+    <img
+      class="flag"
+      :src="`https://flagpedia.net/data/flags/icon/72x54/${alpha2Code.toLowerCase()}.png`"
+      alt=""
+    />
+    <h1>{{ name }}</h1>
+    <table>
+      <thead></thead>
+      <tbody>
+        <tr class="d-flex flex-column">
+          <td class="fw-bold">Capital:</td>
+          <td>{{ capital }}</td>
+        </tr>
+        <tr class="d-flex flex-column">
+          <td class="fw-bold">Area:</td>
+          <td>{{ area }}</td>
+        </tr>
+        <tr class="d-flex flex-column">
+          <td class="fw-bold">Borders:</td>
+          <td>
+            <ul>
+              <li v-for="(border, index) in borders" :key="index">
+                <router-link :to="`/list/${border}`">{{ border }}</router-link>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
