@@ -28,13 +28,18 @@
           <router-view />
         </div>
       </div>
+      <SpinnerComponent text="Loading Countries ..."/>
     </div>
   </div>
 </template>
 
 <script>
+import SpinnerComponent from './SpinnerComponent.vue'
 export default {
   name: "CountriesList",
+  components: {
+    SpinnerComponent
+  },
   data() {
     return {
       //definimos un valor de datos estilo array para recibir la info del api
